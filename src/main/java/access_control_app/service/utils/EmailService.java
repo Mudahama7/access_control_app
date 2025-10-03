@@ -1,4 +1,4 @@
-package backend.service.utils;
+package access_control_app.service.utils;
 
 import jakarta.mail.MessagingException;
 import lombok.AllArgsConstructor;

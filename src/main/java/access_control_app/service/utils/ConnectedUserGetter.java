@@ -1,7 +1,7 @@
-package backend.service.utils;
+package access_control_app.service.utils;
 
-import backend.model.Utilisateur;
-import backend.service.business_logic.UtilisateurService;
+import access_control_app.model.User;
+import access_control_app.service.business_logic.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -10,11 +10,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class ConnectedUserGetter {
 
-    private final UtilisateurService utilisateurService;
+    private final UserService userService;
 
-    public Utilisateur getConnectedUser(){
+    public User getConnectedUser(){
         String userEmail = SecurityContextHolder.getContext().getAuthentication().getName();
-        return utilisateurService.getUtilisateurByEmail(userEmail);
+        return userService.getUserByEmail(userEmail);
     }
 
 }

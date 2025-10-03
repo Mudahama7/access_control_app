@@ -1,6 +1,6 @@
-package backend.service.utils;
+package access_control_app.service.utils;
 
-import backend.model.auth.ConnectedUser;
+import access_control_app.model.auth.ConnectedUser;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

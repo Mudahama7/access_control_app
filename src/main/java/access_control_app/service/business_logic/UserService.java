@@ -1,4 +1,9 @@
 package access_control_app.service.business_logic;
 
-public class UserService {
+import access_control_app.model.User;
+
+public interface UserService {
+
+    User getUserByEmail(String userEmail);
+
 }

@@ -18,7 +18,14 @@ public enum Role {
             Sets.newHashSet(
 
             )
-    );
+    ),
+    ADMINISTRATOR_SYSTEM(
+            Sets.newHashSet(
+
+            )
+    ),
+
+    ;
 
     private final Set<Permission> permissions;
 

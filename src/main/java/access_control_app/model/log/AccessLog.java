@@ -1,4 +1,7 @@
 package access_control_app.model.log;
+
+import access_control_app.model.Door;
+import access_control_app.model.User;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,22 +11,20 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 @Entity
-public class UserActionLog {
+public class AccessLog {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String username;
+    private LocalDateTime timestamp;
 
-    private String httpMethod;
+    private boolean accessGranted;
 
-    private String endpoint;
+    @ManyToOne
+    private User user;
 
-    private String ipAddress;
-
-    private String parameters;
-
-    private LocalDateTime timestamp = LocalDateTime.now();
+    @ManyToOne
+    private Door door;
 
 }
