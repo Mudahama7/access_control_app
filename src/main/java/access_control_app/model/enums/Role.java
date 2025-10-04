@@ -29,6 +29,11 @@ public enum Role {
 
             )
     ),
+    FINAL_USER(
+            Sets.newHashSet(
+
+            )
+    ),
 
     ;
 
