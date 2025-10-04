@@ -1,9 +1,13 @@
 package access_control_app.model;
 
+import access_control_app.model.enums.OrganisationStatus;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
+@NoArgsConstructor
 @Data
 @Entity
 public class Organisation {
@@ -16,7 +20,8 @@ public class Organisation {
 
     private String adresse;
 
-    private boolean status;
+    @Enumerated(EnumType.STRING)
+    private OrganisationStatus status;
 
     @OneToOne
     private User localAdmin;

@@ -19,7 +19,7 @@ public class AccessZone {
     @OneToMany(mappedBy = "accessZone")
     private List<Door> doors;
 
-    @ManyToMany(mappedBy = "accessZoneList")
-    private List<User> userList;
+    @OneToMany(mappedBy = "accessZone")
+    private List<UsersZones> usersZones;
 
 }

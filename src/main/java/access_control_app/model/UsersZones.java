@@ -5,17 +5,16 @@ import lombok.Data;
 
 @Data
 @Entity
-public class RFIDCard {
+public class UsersZones {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
-    private String uid;
-
-    private boolean active;
-
-    @OneToOne
+    @ManyToOne
     private User user;
+
+    @ManyToOne
+    private AccessZone accessZone;
 
 }

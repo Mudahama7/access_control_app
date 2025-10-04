@@ -24,6 +24,11 @@ public enum Role {
 
             )
     ),
+    LOCAL_ADMINISTRATOR(
+            Sets.newHashSet(
+
+            )
+    ),
 
     ;
 

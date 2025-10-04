@@ -1,0 +1,38 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: access_control_app
+  datasource:
+    url: jdbc:postgresql://localhost:5432/access_control_app_db
+    username: mudahama
+    password: 7_mdh_79
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      auto-commit: false
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: unibank.app.informations@gmail.com
+    password: vmnh nxbj zqsv komd
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true

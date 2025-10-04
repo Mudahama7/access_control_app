@@ -5,11 +5,13 @@ import access_control_app.model.enums.UserAccountStatus;
 import access_control_app.model.log.AccessLog;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+@NoArgsConstructor
 @Data
-@Entity
+@Entity(name="users")
 public class User {
 
     @Id
@@ -22,6 +24,7 @@ public class User {
 
     private String registrationNumber = null;
 
+    @Enumerated(EnumType.STRING)
     private UserAccountStatus status = UserAccountStatus.ACTIVE;
 
     private String password;
@@ -38,13 +41,8 @@ public class User {
     @OneToOne(mappedBy = "user")
     private RFIDCard rfidCard;
 
-    @ManyToMany
-    @JoinTable(
-            name = "users_zones",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "zone_id")
-    )
-    private List<AccessZone> accessZoneList;
+    @OneToMany(mappedBy = "user")
+    private List<UsersZones> accessZoneList;
 
     @OneToMany(mappedBy = "user")
     private List<AccessLog> accessLogList;

@@ -1,15 +1,14 @@
 package access_control_app.config;
 
-import backend.model.auth.ConnectedUser;
-import backend.service.utils.CustomUserDetails;
-import backend.service.utils.JwtUtil;
-import backend.service.utils.UserActionLogService;
+import access_control_app.model.auth.ConnectedUser;
+import access_control_app.service.utils.CustomUserDetails;
+import access_control_app.service.utils.JwtUtil;
+import access_control_app.service.utils.UserActionLogService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
@@ -29,8 +28,8 @@ public class RequestFilterConfig extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,
-                                    @NotNull HttpServletResponse response,
-                                    @NotNull FilterChain filterChain)
+                                    HttpServletResponse response,
+                                    FilterChain filterChain)
             throws ServletException, IOException {
 
         String requestPath = request.getServletPath();
